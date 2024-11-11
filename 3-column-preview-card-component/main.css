@@ -17,27 +17,30 @@ body {
 }
 
 .cars {
-  width: 920px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .car_type {
-  width: 307px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 48px;
 }
 
 .sedan {
   background-color: var(--background-color_1);
-  border-radius: 8px 0 0 8px;
 }
 
 .car_type_logo {
   width: 65px;
   display: flex;
   align-items: center;
-  margin: 48px 0 0 48px;
 }
 
 .oval {
@@ -55,14 +58,14 @@ h1 {
   font-size: 40px;
   text-transform: uppercase;
   font-family: var(--font-family_1);
-  margin: 35px 0 0 48px;
   color: var(--color_1);
+  margin: 0;
 }
 
 p {
   display: block;
   width: 212px;
-  margin: 25px 0 0 48px;
+  margin: 0;
   font-size: 15px;
   font-family: var(--font-family_2);
   color: #FFFFFF;
@@ -77,10 +80,10 @@ p {
   box-sizing: border-box;
   width: 146px;
   height: 48px;
+  margin-top: 38px;
   border-radius: 25px;
   background-color: var(--background-color_2);
   color: var(--color_3);
-  margin: 83px 0 48px 48px;
   text-align: center;
   font-size: 15px;
   font-family: var(--font-family_2);
@@ -112,7 +115,6 @@ a {
 
 .luxury {
   background-color: var(--background-color_4);
-  border-radius: 0 8px 8px 0;
 }
 
 .suv_btn {
@@ -141,19 +143,20 @@ a {
 @media screen and (max-width: 320px) {
   .cars {
     width: 327px;
-    flex-direction: column;
-
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    border: 8px;
   }
 
-  .sedan {
-    border-radius: 8px 8px 0 0;
-  }
-
-  .luxury {
-    border-radius: 0 0 8px 8px;
+  .car_type {
+    gap: 25px;
   }
 
   .car_btn {
-    margin-top: 25px;
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-top: 10px;
   }
 }
